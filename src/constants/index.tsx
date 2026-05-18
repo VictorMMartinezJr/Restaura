@@ -3,6 +3,11 @@ import dish2 from "../assets/dishes/dish2.jpeg";
 import dish3 from "../assets/dishes/dish3.jpeg";
 import dish4 from "../assets/dishes/dish4.jpeg";
 import dish5 from "../assets/dishes/dish5.jpeg";
+import dish6 from "../assets/dishes/dish6.jpeg";
+import dish7 from "../assets/dishes/dish7.jpeg";
+import dish8 from "../assets/dishes/dish8.jpeg";
+import dish9 from "../assets/dishes/dish9.jpeg";
+import dish10 from "../assets/dishes/dish10.jpeg";
 
 interface Link {
   text: string;
@@ -42,5 +47,31 @@ export const DISHES = [
     image: dish5,
     title: "Chocolate Lava Cake",
     description: "Decadent chocolate cake with a gooey center",
+  },
+  {
+    image: dish6,
+    title: "Greek Salad",
+    description: "Crisp lettuce, olives, feta cheese, and tangy dressing",
+  },
+  {
+    image: dish7,
+    title: "Pad Thai",
+    description: "Stir-fried rice noodles with shrimp, tofu, and peanuts",
+  },
+  {
+    image: dish8,
+    title: "Peking Duck",
+    description: "Crispy duck with pancakes, cucumber, and hoisin sauce",
+  },
+  {
+    image: dish9,
+    title: "Beef Wellington",
+    description: "Tender beef filet wrapped in pastry with mushrooms and herbs",
+  },
+  {
+    image: dish10,
+    title: "Tiramisu",
+    description:
+      "Italian dessert with layers of coffee-soaked biscuits and mascarpone",
   },
 ];
