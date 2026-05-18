@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
