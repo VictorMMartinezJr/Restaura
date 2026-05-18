@@ -9,6 +9,7 @@ import dish8 from "../assets/dishes/dish8.jpeg";
 import dish9 from "../assets/dishes/dish9.jpeg";
 import dish10 from "../assets/dishes/dish10.jpeg";
 
+// Navigation links
 interface Link {
   text: string;
   href: string;
@@ -22,7 +23,14 @@ export const LINKS: Link[] = [
   { text: "Contact", href: "#contact" },
 ];
 
-export const DISHES = [
+// Dishes data
+interface Dish {
+  image: string;
+  title: string;
+  description: string;
+}
+
+export const DISHES: Dish[] = [
   {
     image: dish1,
     title: "Spaghetti Carbonara",
@@ -75,3 +83,14 @@ export const DISHES = [
       "Italian dessert with layers of coffee-soaked biscuits and mascarpone",
   },
 ];
+
+// About us content
+interface AboutContent {
+  header: string;
+  content: string;
+}
+export const ABOUT: AboutContent = {
+  header: "We love cooking!",
+  content:
+    "At Restaura, we believe that great food goes beyond taste; it tells a story of dedication and creativity. From our chef's signature creations to our attentive service, every detail is curated to ensure your visit is nothing short of exceptional. Whether you're savoring our renowned Tikka Kebab or exploring our diverse menu inspired by global flavors, each dish is a celebration of flavor and innovation. Join us for a culinary journey where every bite leaves a lasting impression. Experience Restaura—where every meal is a masterpiece.",
+};
