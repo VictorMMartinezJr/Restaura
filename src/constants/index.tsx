@@ -9,6 +9,9 @@ import dish8 from "../assets/dishes/dish8.jpeg";
 import dish9 from "../assets/dishes/dish9.jpeg";
 import dish10 from "../assets/dishes/dish10.jpeg";
 
+import indian from "../assets/cuisines/indian.jpeg";
+import japanese from "../assets/cuisines/japanese.jpeg";
+
 // Navigation links
 interface Link {
   text: string;
@@ -103,3 +106,27 @@ export const MISSION: MissionContent = {
   statement:
     "At our restaurant, our mission is to create delicious and memorable dining experiences.",
 };
+
+// Cuisines data
+interface Cuisine {
+  number: string;
+  image: string;
+  title: string;
+  description: string;
+}
+export const CUSINES: Cuisine[] = [
+  {
+    number: "01.",
+    image: indian,
+    title: "Indian",
+    description:
+      "Indulge in the rich and diverse tastes of India, with a menu that celebrates the country's culinary heritage.",
+  },
+  {
+    number: "02.",
+    image: japanese,
+    title: "Japanese",
+    description:
+      "Delight in the art of Japanese culinary excellence, offering a fusion of classic and modern flavors.",
+  },
+];
