@@ -19,21 +19,21 @@ const Navbar = () => {
           <img src={logo} alt="Restaura Logo" width={80} height={22} />
 
           {/* Desktop Links */}
-          <div className="hidden space-x-6 lg:flex">
+          <ul className="hidden space-x-6 lg:flex">
             {LINKS.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className={`${index !== 0 && "border-l-2 border-neutral-300/20 pl-2"} hover:opacity-50`}
+                className={`cursor-pointer ${index !== 0 && "border-l-2 border-neutral-300/20 pl-2"} hover:opacity-50`}
               >
                 {link.text}
               </a>
             ))}
-          </div>
+          </ul>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
-            <button onClick={toggleMobileMenu}>
+            <button className="cursor-pointer" onClick={toggleMobileMenu}>
               {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
@@ -41,18 +41,18 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="w-full backdrop-blur-lg ld:hidden">
+          <ul className="w-full backdrop-blur-lg ld:hidden">
             {LINKS.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="block p-4 uppercase tracking-tighter"
+                className="block p-4 uppercase tracking-tighter cursor-pointer"
                 onClick={toggleMobileMenu}
               >
                 {link.text}
               </a>
             ))}
-          </div>
+          </ul>
         )}
       </nav>
     </header>
