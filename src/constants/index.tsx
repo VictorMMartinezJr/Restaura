@@ -137,10 +137,20 @@ interface ReviewContent {
   profession: string;
   content: string;
 }
-
 export const REVIEW: ReviewContent = {
   name: "Xaviour Fernando",
   profession: "Food Critic",
   content:
     "“As a seasoned food critic, my expectations are always high when stepping into a new dining establishment. Restaura, with its unassuming exterior and elegantly designed interior, promised a unique culinary experience from the moment I walked in. And I must say, it delivered beyond my expectations.”",
 };
+
+// Contact information
+interface ContactInfo {
+  key: string;
+  value: string;
+}
+export const CONTACT: ContactInfo[] = [
+  { key: "address", value: "Address: 123 Main Street, Paris, France, 345678" },
+  { key: "phone", value: "Phone: 123-456-7890" },
+  { key: "email", value: "Email: contact@restaurant.com" },
+];
