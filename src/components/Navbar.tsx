@@ -3,6 +3,22 @@ import logo from "../assets/hero/logo.png";
 import { LINKS } from "../constants";
 import { FaTimes } from "react-icons/fa";
 import { FaBars } from "react-icons/fa6";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -16,20 +32,31 @@ const Navbar = () => {
       <nav className="fixed top-4 z-50 flex w-full flex-col items-center justify-center text-white">
         {/* Nav Logo */}
         <div className="flex w-full items-center justify-between overflow-y-hidden p-4 backdrop-blur-lg lg:m-2 lg:w-200 lg:rounded-full lg:shadow-lg">
-          <img src={logo} alt="Restaura Logo" width={80} height={22} />
+          <motion.img 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          src={logo} alt="Restaura Logo" width={80} height={22} />
 
           {/* Desktop Links */}
-          <ul className="hidden space-x-6 lg:flex">
+          <motion.ul 
+            initial="hidden"
+            whileInView="show"
+            variants={containerVariants}
+            viewport={{ once: true }}
+            className="hidden gap-6 text-sm uppercase tracking-tighter lg:flex"
+          >
             {LINKS.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className={`cursor-pointer ${index !== 0 && "border-l-2 border-neutral-300/20 pl-2"} hover:opacity-50`}
-              >
-                {link.text}
-              </a>
+              <motion.li variants={itemVariants} key={index}>
+                <a
+                  href={link.href}
+                  className={`cursor-pointer ${index !== 0 && "border-l-2 border-neutral-300/20 pl-2"} hover:opacity-50`}
+                >
+                  {link.text}
+                </a>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
