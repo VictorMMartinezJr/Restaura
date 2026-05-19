@@ -1,5 +1,6 @@
 import { MISSION } from "../constants";
 import mission from "../assets/mission.jpeg";
+import { motion } from "framer-motion";
 
 const Mission = () => {
   return (
@@ -22,9 +23,15 @@ const Mission = () => {
 
           {/* Overlay and text */}
           <div className="absolute h-full w-full rounded-3xl bg-black/40"></div>
-          <p className="absolute max-w-lg tracking-tighter lg:text-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="absolute max-w-lg tracking-tighter lg:text-3xl"
+          >
             {MISSION.statement}
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
