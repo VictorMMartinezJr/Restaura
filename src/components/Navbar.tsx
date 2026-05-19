@@ -40,20 +40,20 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <ul className="w-full backdrop-blur-lg ld:hidden">
-            {LINKS.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="block p-4 uppercase tracking-tighter cursor-pointer"
-                onClick={toggleMobileMenu}
-              >
-                {link.text}
-              </a>
-            ))}
-          </ul>
-        )}
+        <ul
+          className={`w-full backdrop-blur-lg transition-opacity duration-200 lg:hidden ${isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        >
+          {LINKS.map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className="block p-4 uppercase tracking-tighter cursor-pointer"
+              onClick={toggleMobileMenu}
+            >
+              {link.text}
+            </a>
+          ))}
+        </ul>
       </nav>
     </header>
   );
