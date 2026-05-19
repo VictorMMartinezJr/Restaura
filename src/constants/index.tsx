@@ -154,3 +154,25 @@ export const CONTACT: ContactInfo[] = [
   { key: "phone", value: "Phone: 123-456-7890" },
   { key: "email", value: "Email: contact@restaurant.com" },
 ];
+
+// Social media links
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+interface SocialMediaLink {
+  href: string;
+  icon: React.JSX.Element;
+}
+export const SOCIAL_MEDIA_LINKS: SocialMediaLink[] = [
+  {
+    href: "https://x.com/",
+    icon: <FaFacebook fontSize={30} className="hover:opacity-80" />,
+  },
+
+  {
+    href: "https://x.com/",
+    icon: <FaInstagram fontSize={30} className="hover:opacity-80" />,
+  },
+  {
+    href: "https://x.com/",
+    icon: <FaTwitter fontSize={30} className="hover:opacity-80" />,
+  },
+];
