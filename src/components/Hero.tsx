@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import heroIMG from "../assets//hero/hero.jpeg";
 import logo from "../assets/hero/logo.png";
+import { useState } from "react";
 
 const Hero = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
+
   return (
     <section className="relative flex h-screen items-center justify-center">
       {/* Background Video */}
-      <div className="absolute inset-0 -z-20 h-full w-full overflow-hidden">
+      <motion.div 
+        className="absolute inset-0 -z-20 h-full w-full overflow-hidden bg-black"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVideoLoaded ? 1 : 0 }} 
+        transition={{ duration: 0.6 }}
+      >
         <video
           src="https://res.cloudinary.com/dosqnvzhy/video/upload/v1779133379/hero_uwo0yz.mp4"
           className="h-full w-full object-cover pointer-events-none"
@@ -14,9 +22,10 @@ const Hero = () => {
           autoPlay
           loop
           playsInline
+          onCanPlayThrough={() => setIsVideoLoaded(true)}
           poster={heroIMG}
         ></video>
-      </div>
+      </motion.div>
       {/* Overlay */}
       <div className="absolute inset-0 -z-10 bg-linear-to-b from-transparent from-70% to-black"></div>
 
